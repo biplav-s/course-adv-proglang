@@ -1,0 +1,3 @@
+A prefix - Hello from file
+A prefix - This is second line
+A prefix - This is final line

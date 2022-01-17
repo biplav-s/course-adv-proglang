@@ -1,0 +1,3 @@
+Read and will write - Line 1: Beginning line
+Read and will write - Line 2: second line
+Read and will write - Line 3: Last line

@@ -1,0 +1,3 @@
+Hello from file
+This is second line
+This is final line

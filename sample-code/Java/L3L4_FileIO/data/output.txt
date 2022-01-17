@@ -1,0 +1,3 @@
+Prefix <-> First line
+Prefix <-> Second line
+Prefix <-> Last line to end file

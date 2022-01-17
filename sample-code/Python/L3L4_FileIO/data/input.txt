@@ -1,0 +1,3 @@
+Beginning line
+second line
+Last line
