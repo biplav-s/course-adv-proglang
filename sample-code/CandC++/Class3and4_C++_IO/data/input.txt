@@ -1,3 +1,4 @@
 Hello from file
 This is second line
+3rd line in class
 This is final line
