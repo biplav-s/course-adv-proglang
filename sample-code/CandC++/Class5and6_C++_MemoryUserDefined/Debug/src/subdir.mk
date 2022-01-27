@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/Class5and6_C++_MemoryUserDefined.cpp 
+../src/Class5and6_C++_MemoryUserDefined.cpp \
+../src/PersonClassDemo.cpp 
 
 CPP_DEPS += \
-./src/Class5and6_C++_MemoryUserDefined.d 
+./src/Class5and6_C++_MemoryUserDefined.d \
+./src/PersonClassDemo.d 
 
 OBJS += \
-./src/Class5and6_C++_MemoryUserDefined.o 
+./src/Class5and6_C++_MemoryUserDefined.o \
+./src/PersonClassDemo.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -25,7 +28,7 @@ src/%.o: ../src/%.cpp src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/Class5and6_C++_MemoryUserDefined.d ./src/Class5and6_C++_MemoryUserDefined.o
+	-$(RM) ./src/Class5and6_C++_MemoryUserDefined.d ./src/Class5and6_C++_MemoryUserDefined.o ./src/PersonClassDemo.d ./src/PersonClassDemo.o
 
 .PHONY: clean-src
 

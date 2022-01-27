@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include <string>
+
+#include "PersonClassDemo.h"
 using namespace std;
 
 // A declaration for person's name
@@ -140,6 +142,24 @@ int demoDynamicMemoryAllocation() {
 	return 0;
 }
 
+int demoPersonClass() {
+	
+	cout << "\n*** DEMO of person class ***\n\n";
+
+	PersonClassDemo p1;
+	cout << "Person 1's first name = " << p1.getFirst() << endl; 
+	cout << "Person 1's  last name = " << p1.getLast() << endl; 
+	
+	PersonClassDemo p2("Joginder");
+	cout << "Person 2's  first name = " << p2.getFirst() << endl; 
+	cout << "Person 2's  last name = " << p2.getLast() << endl; 
+	
+	PersonClassDemo p3("Joginder", "Singh");
+	cout << "Person 3's  first name = " << p3.getFirst() << endl; 
+	cout << "Person 3's  last name = " << p3.getLast() << endl; 
+		
+}
+
 // --- Main ---
 
 int main(int argc, char *argv[]) {
@@ -172,6 +192,10 @@ int main(int argc, char *argv[]) {
 	} else if (command == '2') {
 		// Demo reading of file
 		demoDynamicMemoryAllocation();
+		
+	}  else if (command == '3') {
+		// Demo class usage
+		demoPersonClass();
 		
 	} 
 
