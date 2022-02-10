@@ -7,6 +7,7 @@
 //============================================================================
 
 #include <iostream>
+#include <regex>
 using namespace std;
 
 #include "Parent.h"
@@ -107,7 +108,7 @@ void demoEmployeePolyBasic() {
 	EmployeeExec ee;
 	emps[3] = &ee;
 
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 4; i++) {
 		// Polymorphic Call: Calls myprint()
 		// according to the actual object, not
 		// according to the type of pointer
@@ -162,6 +163,40 @@ void demoEmployeePolyAdv() {
 
 }
 
+// Demonstrate regular expressions usage
+void demoRegex() {
+
+	string str_to_check = "Advanced Programming Techniques";
+	string pattern = "(.*)(Prog)(.*)";
+	regex pattern_to_check(pattern);
+
+	if (regex_match(str_to_check, pattern_to_check))
+		cout << "string - '" << str_to_check << "' matches pattern - "
+				<< pattern << "\n";
+
+	pattern = "[a-zA-Z_][a-zA-Z_0-9]*\\.[a-zA-Z0-9]+";
+	// Match a letter (lowercase and then uppercase) or an underscore.
+	// Then match zero or more characters, in which each may be a
+	// letter, or an underscore or a digit. Then match a literal
+	// dot (.). After the dot, match one or more characters, in which
+	// each may be a letter or digit indicating file extension.
+
+	string str2 = "AdvProg.pdf";
+	string str3 = "Adv Prog.pdf";
+	regex pattern_to_check2(pattern);
+
+	 if (regex_match (str2, pattern_to_check2 ))
+			cout << "string - '" << str2 << "' matches pattern - "
+					<< pattern << "\n";
+
+	 if (!regex_match (str3, pattern_to_check2 ))
+			cout << "string - '" << str3 << "' does not match pattern - "
+					<< pattern << "\n";
+
+
+	cout << "** Demonstration of regex over **" << endl;
+}
+
 // --------
 int main(int argc, char *argv[]) {
 
@@ -191,9 +226,12 @@ int main(int argc, char *argv[]) {
 	} else if (command == '1') {
 		// Demo poly basic
 		demoEmployeePolyBasic();
-	} else {
+	} else if (command == '2') {
 		// Demo poly adv usage
 		demoEmployeePolyAdv();
+	} else {
+		// Demo regular expression usage
+		demoRegex();
 	}
 
 	return 0;
