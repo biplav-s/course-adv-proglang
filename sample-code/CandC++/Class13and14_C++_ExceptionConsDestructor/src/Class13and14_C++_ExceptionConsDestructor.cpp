@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : Class11and12_C++_ExceptionConsDestructor.cpp
+// Name        : Class13and14_C++_ExceptionConsDestructor.cpp
 // Author      : Biplav
 // Version     :
 // Copyright   : Your copyright notice
@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
 	char command = 0;
 	string str = "";
 
-	cout << "Examples for Classes 11 and 12\n" << endl; 
+	cout << "Examples for Classes 13 and 14\n" << endl; 
 	
 	// First argument is program name
 	cout << "Program name : " << argv[0] << endl;

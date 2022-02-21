@@ -40,7 +40,7 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Class11and12_C++_ExceptionConsDestructor
+BUILD_ARTIFACT_NAME := Class13and14_C++_ExceptionConsDestructor
 BUILD_ARTIFACT_EXTENSION :=
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
@@ -51,19 +51,19 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 all: main-build
 
 # Main-build Target
-main-build: Class11and12_C++_ExceptionConsDestructor
+main-build: Class13and14_C++_ExceptionConsDestructor
 
 # Tool invocations
-Class11and12_C++_ExceptionConsDestructor: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+Class13and14_C++_ExceptionConsDestructor: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C++ Linker'
-	g++  -o "Class11and12_C++_ExceptionConsDestructor" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -std=c++11  -o "Class13and14_C++_ExceptionConsDestructor" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Class11and12_C++_ExceptionConsDestructor
+	-$(RM) Class13and14_C++_ExceptionConsDestructor
 	-@echo ' '
 
 .PHONY: all clean dependents main-build
