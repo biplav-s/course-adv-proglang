@@ -229,6 +229,9 @@ int main(int argc, char *argv[]) {
 	} else if (command == '2') {
 		// Demo poly adv usage
 		demoEmployeePolyAdv();
+	} else if (command == '3'){
+		// Demo constructor / destructor chains
+		demoGrandChild();
 	} else {
 		// Demo regular expression usage
 		demoRegex();
