@@ -204,14 +204,17 @@ void demoStructValueSwapWithPointers()
 
 
 int add(int x, int y) {
+	cout << "INFO: add - ing - ";
 	return x + y;
 }
 
 int multiply(int x, int y) {
+	cout << "INFO: multiply - ing - ";	
 	return x * y;
 }
 
 int subtract(int x, int y) {
+	cout << "INFO: subtract - ing - ";	
 	return x - y;
 }
 
@@ -246,6 +249,19 @@ void demoFunctionPointers()
 	cout << "\t result=" << evaluate(&add, a, b) << endl;
 
 	
+}
+
+
+
+// Demonstrate usage of function pointer arrays
+void demoFunctionPointerArrays()
+{
+	int a = 2;
+	int b = 10;
+	
+	cout << "INFO: Demonstrating Usage of Function Pointer Arrays - " << endl;
+
+	
 	int (*f[3])(int, int);
 	f[0] = &add;
 	f[1] = &multiply;
@@ -253,11 +269,12 @@ void demoFunctionPointers()
 
 	cout << "Calling function array via function pointers" << endl; 
 	for(int i=0; i<3; i++) {
-		cout << "Running function - " << *f[i] << endl; 
+		cout << "Running function - " << endl; 
 		cout << "\t a=" << a << ", b=" << b << endl;
 		cout << "\t result=" << f[i](a, b) << endl;
 	}
 }
+
 
 // -----------------------------------
 // Main 
@@ -304,6 +321,9 @@ int main(int argc, char *argv[]) {
 	} else if (command == '5') {
 		// Demo function pointers
 		demoFunctionPointers();
+	} else if (command == '6') {
+		// Demo function pointers
+		demoFunctionPointerArrays();
 	} else {
 		// For more demos
 		
