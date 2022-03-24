@@ -9,6 +9,8 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
+
+#include "Point.h"
 using namespace std;
 
 // Demonstrate reading of file
@@ -87,6 +89,49 @@ void demoBufferCppReadFile() {
 	
 }
 
+// Demonstrate buffer operations
+void exploreBufferedStreams() {
+
+	cout << "\n*** DEMO of buffers ***\n\n";
+
+	string out_file_name = "data/output.txt";
+
+	ofstream os(out_file_name);
+	
+	if (!os.is_open()) {
+		cout << "Unable to open output file - " << out_file_name << endl;
+	}
+	
+	// Situation at start
+	cout << "Info: position of put pointer - " << os.tellp() << endl;
+
+	// Insert a character
+	cout << "Info: inserting 'a' ";
+	os.put('a');
+	// Check the position
+	cout << "Info: position of put pointer - " << os.tellp() << endl;
+	
+	// Insert a 5-length string
+	cout << "Info: inserting 'Hello' ";
+	os.put('Hello');
+	// Check the position
+	cout << "Info: position of put pointer - " << os.tellp() << endl;
+	
+	// Moving by 3 positions 
+	// cout << "Info: moving put by 3 using 'seek' ";	
+	os.seekp(3, ios::cur);
+	cout << "Info: position of put pointer - " << os.tellp() << endl;
+
+	// Moving by -3 positions 
+	// cout << "Info: moving put by 3 using 'seek' ";	
+	os.seekp(-3, ios::cur);
+	cout << "Info: position of put pointer - " << os.tellp() << endl;
+	
+	// Close output file
+	os.close();
+
+}
+
 
 
 // Demonstrate reading and writing of file
@@ -124,6 +169,63 @@ void demoReadWriteFile() {
 }
 
 
+// Demonstrate reading and writing of file with buffers
+void demoReadWriteBuffersFile() {
+
+	cout << "\n*** DEMO of reading from and writing to file using buffers ***\n\n";
+	// https://www.cplusplus.com/reference/ostream/ostream/write/
+	
+	string in_file_name = "data/input.txt";
+	string out_file_name = "data/output.txt";
+	string line;
+
+	ifstream in_myfile(in_file_name);
+	ofstream out_myfile(out_file_name);
+	
+	// get size of file
+	in_myfile.seekg (0,in_myfile.end);
+	long size = in_myfile.tellg();
+	cout << "Info: size of input file - " << size << endl;
+
+	
+	// Now move to the beginning to start reading
+	in_myfile.seekg (0);
+
+	// allocate memory for file content
+	char* buffer = new char[size];
+	  
+	// read content of infile
+	in_myfile.read (buffer,size);
+
+	// write to outfile
+	out_myfile.write (buffer,size);
+
+	// release dynamically-allocated memory
+	delete[] buffer;
+
+	// Close files and flush content
+	out_myfile.close();
+	in_myfile.close();
+	  
+}
+
+// Demonstrate operator overloading
+void demoOperatorOverloading() {
+
+	cout << "\n*** DEMO of operator overloading ***\n\n";
+	// Credit: Adapted from e.g. on page 131: C++ Essentials, Sharam Hekmat
+
+	
+	Point p1(10,20), p2(10,20);
+	Point p3 = p1 + p2;
+	Point p4 = p1 - p2; 
+	
+	cout << "Point p3 value - " << endl;
+	p3.print();
+	cout << "Point p4 value - " << endl;
+	p4.print();
+		
+}
 
 // --- Main ---
 
@@ -161,9 +263,18 @@ int main(int argc, char *argv[]) {
 	} else if (command == '3') {
 		// Demo buffered reading of files in C++ style
 		demoBufferCppReadFile();
+	} else if (command == '4') {
+		// Demo stream/buffer operations 
+		exploreBufferedStreams();
+	} else if (command == '5') {
+		// Demo stream/buffer operations 
+		demoReadWriteFile();
+	} else if (command == '6') {
+		// Demo stream/buffer operations 
+		demoReadWriteBuffersFile();
 	} else {
 		// future option
-
+		demoOperatorOverloading();
 	} 
 
 	return 0;

@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/Class19To22_AdvTopics.cpp 
+../src/Class19To22_AdvTopics.cpp \
+../src/Point.cpp 
 
 CPP_DEPS += \
-./src/Class19To22_AdvTopics.d 
+./src/Class19To22_AdvTopics.d \
+./src/Point.d 
 
 OBJS += \
-./src/Class19To22_AdvTopics.o 
+./src/Class19To22_AdvTopics.o \
+./src/Point.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -25,7 +28,7 @@ src/%.o: ../src/%.cpp src/subdir.mk
 clean: clean-src
 
 clean-src:
-	-$(RM) ./src/Class19To22_AdvTopics.d ./src/Class19To22_AdvTopics.o
+	-$(RM) ./src/Class19To22_AdvTopics.d ./src/Class19To22_AdvTopics.o ./src/Point.d ./src/Point.o
 
 .PHONY: clean-src
 
