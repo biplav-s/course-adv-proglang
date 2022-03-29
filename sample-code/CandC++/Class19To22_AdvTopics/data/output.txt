@@ -1,4 +1,4 @@
-Hello from file
-This is second line
-3rd line in class
-This is final line
+A prefix - Hello from file
+A prefix - This is second line
+A prefix - 3rd line in class
+A prefix - This is final line
