@@ -4,8 +4,10 @@
 Prof. Biplav Srivastava, AI Institute, University of South Carolina
 
 Spring 2022, [**Course Website**](https://sites.google.com/site/biplavsrivastava/teaching/csce-240-advanced-programming-techniques)
----
+
 _A blog about the teaching experience is [here](https://www.linkedin.com/pulse/back-c-teaching-undergraduate-programming-course-after-srivastava/)_.
+
+---
 
 ## Illustrative Student-contributed Material
 * Course project - chatbots for knowing about South Carolina Congress persons
